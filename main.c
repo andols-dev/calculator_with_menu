@@ -39,7 +39,7 @@ float divide(int num1, int num2) {
     float result = (float)num1 / num2;
     return result;
 }
-void calculate(int menuNumber, int num1, int num2, int result, float dividedResult) {
+int calculate(int menuNumber, int num1, int num2, int result, float dividedResult) {
     switch (menuNumber) {
         case 1:
             printf("Add\n");
@@ -72,22 +72,34 @@ void calculate(int menuNumber, int num1, int num2, int result, float dividedResu
         case 5:
             //printf("Exit\n");
             printf("Exit...");
-            break;
+            return 1;
     }
-
+    return 0;
 }
-int main()
-{
+int main() {
     int num1, num2, menuNumber, result;
     float dividedResult;
-    // Show menu
-    menu();
+    int shouldExit = 0; // Flagga för att indikera om programmet ska avslutas
 
-    // Choose menu number
-    chooseMenuNumber(&menuNumber);
+    while (!shouldExit) { // Fortsätt loopa så länge shouldExit är 0
+        // Show menu
+        menu();
 
-    // Calculate
-    calculate(menuNumber,num1, num2, result, dividedResult);
+        // Choose menu number
+        chooseMenuNumber(&menuNumber);
+
+        // Calculate
+        shouldExit = calculate(menuNumber, num1, num2, result, dividedResult);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
 
 
 
@@ -99,5 +111,5 @@ int main()
 
 
 
-    return 0;
-}
+
+
