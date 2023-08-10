@@ -29,9 +29,20 @@ int subtract(int num1, int num2) {
     int result = num1 - num2;
     return result;
 }
+
+int multiply(int num1, int num2) {
+    int result = num1 * num2;
+    return result;
+}
+
+float divide(int num1, int num2) {
+    int result = (float)num1 / num2;
+    return result;
+}
 int main()
 {
     int num1, num2, menuNumber, result;
+    float dividedResult;
     // Show menu
     menu();
 
@@ -58,11 +69,15 @@ int main()
             printf("Multiply\n");
             // Choose numbers
             chooseNumbers(&num1, &num2);
+            result = multiply(num1, num2);
+            printf("%d * %d = %d\n", num1, num2, result);
             break;
         case 4:
             printf("Divide\n");
             // Choose numbers
             chooseNumbers(&num1, &num2);
+            dividedResult = divide(num1, num2);
+            printf("%d * %d = %.1f\n", num1, num2, dividedResult);
             break;
         case 5:
             //printf("Exit\n");
