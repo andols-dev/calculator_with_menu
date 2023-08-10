@@ -16,7 +16,7 @@ void chooseNumbers(int *num1, int *num2) {
 }
 
 void chooseMenuNumber(int *menuNumber) {
-    printf("Choose a number from the menu");
+    printf("Choose a number from the menu: ");
     scanf("%d",menuNumber);
 }
 int main()
@@ -28,14 +28,43 @@ int main()
     // Choose menu number
     chooseMenuNumber(&menuNumber);
 
-    printf("You have chosen menu number: %d", menuNumber);
+    // Calculate
+    switch (menuNumber) {
+        case 1:
+            printf("Add\n");
+            // Choose numbers
+            chooseNumbers(&num1, &num2);
+            break;
+        case 2:
+            printf("Subtract\n");
+            // Choose numbers
+            chooseNumbers(&num1, &num2);
+            break;
+        case 3:
+            printf("Multiply\n");
+            // Choose numbers
+            chooseNumbers(&num1, &num2);
+            break;
+        case 4:
+            printf("Divide\n");
+            // Choose numbers
+            chooseNumbers(&num1, &num2);
+            break;
+        case 5:
+            //printf("Exit\n");
+            printf("Exit...");
+            break;
+    }
 
-    // Choose numbers
-    chooseNumbers(&num1, &num2);
+
+
+    //printf("You have chosen menu number: %d\n", menuNumber);
+
+
 
     //printf("You have chosen: %d and %d\n", num1, num2);
 
-    //Choose menu number
+
 
     return 0;
 }
