@@ -36,20 +36,10 @@ int multiply(int num1, int num2) {
 }
 
 float divide(int num1, int num2) {
-    int result = (float)num1 / num2;
+    float result = (float)num1 / num2;
     return result;
 }
-int main()
-{
-    int num1, num2, menuNumber, result;
-    float dividedResult;
-    // Show menu
-    menu();
-
-    // Choose menu number
-    chooseMenuNumber(&menuNumber);
-
-    // Calculate
+void calculate(int menuNumber, int num1, int num2, int result, float dividedResult) {
     switch (menuNumber) {
         case 1:
             printf("Add\n");
@@ -77,13 +67,27 @@ int main()
             // Choose numbers
             chooseNumbers(&num1, &num2);
             dividedResult = divide(num1, num2);
-            printf("%d * %d = %.1f\n", num1, num2, dividedResult);
+            printf("%d / %d = %.2f\n", num1, num2, dividedResult);
             break;
         case 5:
             //printf("Exit\n");
             printf("Exit...");
             break;
     }
+
+}
+int main()
+{
+    int num1, num2, menuNumber, result;
+    float dividedResult;
+    // Show menu
+    menu();
+
+    // Choose menu number
+    chooseMenuNumber(&menuNumber);
+
+    // Calculate
+    calculate(menuNumber,num1, num2, result, dividedResult);
 
 
 
