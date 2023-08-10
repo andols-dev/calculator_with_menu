@@ -19,9 +19,19 @@ void chooseMenuNumber(int *menuNumber) {
     printf("Choose a number from the menu: ");
     scanf("%d",menuNumber);
 }
+
+int add(int num1, int num2) {
+    int result = num1 + num2;
+    return result;
+}
+
+int subtract(int num1, int num2) {
+    int result = num1 - num2;
+    return result;
+}
 int main()
 {
-    int num1, num2, menuNumber;
+    int num1, num2, menuNumber, result;
     // Show menu
     menu();
 
@@ -34,11 +44,15 @@ int main()
             printf("Add\n");
             // Choose numbers
             chooseNumbers(&num1, &num2);
+            result = add(num1, num2);
+            printf("%d + %d = %d\n", num1, num2, result);
             break;
         case 2:
             printf("Subtract\n");
             // Choose numbers
             chooseNumbers(&num1, &num2);
+            result = subtract(num1, num2);
+            printf("%d - %d = %d\n", num1, num2, result);
             break;
         case 3:
             printf("Multiply\n");
